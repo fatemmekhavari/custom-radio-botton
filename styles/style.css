@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body{
+    font-family: 'Poppins',sans-serif;
+}
+.container{
+    width: 380px;
+    height: 400px;
+    margin: 80px auto;
+    border-radius: 20px 20px 10px 10px;
+    box-shadow: 1px 1px 15px 5px rgb(148, 146, 146);
+    overflow: hidden;
+}
+.container .title{
+    width: inherit;
+    line-height: 80px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    font-size: 27px;
+}
+.container .box{
+    width: 280px;
+    height: 300px;
+    margin: 7px auto;
+    display: flex;
+    flex-direction: column;
+}
+.box input[type='radio']{
+    display: none;
+}
+.box label{
+   display: flex;
+   border: 1px solid lightgray;
+   margin: 15px 0 0;
+   padding: 15px;
+   border-radius: 30px;
+   transition: all 0.3s ease;
+}
+label .dot{
+    width: 20px;
+    height: 20px;
+    background-color: lightgray;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    margin-right: 8px;
+    position: relative;
+}
+label .dot::before{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}   
+#section-1:checked ~ .section-1 .dot::before,
+#section-2:checked ~ .section-2 .dot::before,
+#section-3:checked ~ .section-3 .dot::before,
+#section-4:checked ~ .section-4 .dot::before{
+    background: #333;
+    transform: translate(-50%, -50%) scale(1);
+}
+label .desc{
+    font-size: 17px;
+    transition: color 0.3s ease;
+}
+#section-1:checked ~ .section-1,
+#section-2:checked ~ .section-2,
+#section-3:checked ~ .section-3,
+#section-4:checked ~ .section-4{
+    background: #333;
+}
+#section-1:checked ~ .section-1 .desc,
+#section-2:checked ~ .section-2 .desc,
+#section-3:checked ~ .section-3 .desc,
+#section-4:checked ~ .section-4 .desc{
+    color: #fff;
+}
